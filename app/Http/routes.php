@@ -10,8 +10,18 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+//Redirect Catch
+Route::get('/home', function()
+           {
+               return redirect('/'); 
+           });
 
 Route::get('/', 'MainContentController@index');
+
+Route::get('incident', 'MainLoader@incident');
+
+//Main Content Resource
+Route::resource('maincs', 'MainContentController');
 
 // Authentication routes
 Route::get('auth/login', 'Auth\AuthController@getLogin');

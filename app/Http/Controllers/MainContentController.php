@@ -9,7 +9,6 @@ use Carbon\Carbon;
 use DB;
 use Auth;
 use App\Mainc;
-
 use App\Http\Controllers\Controller;
 
 
@@ -39,7 +38,7 @@ class MainContentController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.report');
     }
 
     /**
@@ -48,9 +47,79 @@ class MainContentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request\Createmainc $request)
     {
-        //
+
+        $input = Request::all();
+        $mainc = new mainc;
+        
+        $mainc->title = $input['title'];
+        $mainc->body = $input['body'];
+        $mainc->summary = $input['summary'];
+        $mainc->user_id = Auth::user()->id;
+        
+        $mainc->save();
+        
+        $qid = $mainc->id; 
+        
+        $tagin = $input['tags'];
+        
+        $tagint = preg_replace('/\s+/', '', $tagin);
+        
+        $tagints = strtolower($tagint);
+        
+        $pieces = preg_split( '/#/', $tagints, NULL, PREG_SPLIT_NO_EMPTY);
+        
+        foreach ($pieces as $atag)
+            {
+            
+                $atag = trim($atag);
+                
+            
+                $existtags = DB::table('tags')
+                    ->where('name', '=', $atag)
+                    ->first();
+
+                if(is_null($existtags))
+
+                    {
+                        $tag = new Tag;
+
+                        $tag->name = $atag;
+
+                        $tag->save();
+
+                        $tidn = $tag->id;
+
+                        $mainctag = new mainctag;
+
+                        $mainctag->tag_id = $tidn;
+
+                        $mainctag->mainc_id = $qid;
+
+                        $mainctag->save();
+
+
+                    }
+
+                else
+                    {
+
+                        $tid = $existtags->id;    
+
+                        $mainctag = new mainctag;
+
+                        $mainctag->tag_id = $tid;
+
+                        $mainctag->mainc_id = $qid;
+
+                        $mainctag->save();
+                    }
+            }
+        
+        \Session::flash('flash_message', 'Your report has been posted');
+
+        return redirect('maincs');
     }
 
     /**
