@@ -1,0 +1,51 @@
+div.upvote {
+    text-align: center;
+}
+
+div.upvote a.upvote-enabled {
+    cursor: pointer;
+}
+
+div.upvote a {
+    color: transparent;
+    background-image: url('images/sprites-grumbleground.png');
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: block;
+    margin: 0 auto;
+    width: 38px;
+    height: 24px;
+}
+
+div.upvote span.count {
+    display: block;
+    font-size: 24px;
+    font-family: Arial, Liberation, Sans, DejaVu Sans, sans-serif;
+    color: #555;
+    text-align: center;
+    line-height: 1;
+}
+
+div.upvote a.upvote {
+    background-position: 0px -68px;
+}
+
+div.upvote a.upvote.upvote-on {
+    background-position: 0px -102px;
+}
+
+div.upvote a.downvote {
+    background-position: 0px -34px;
+}
+
+div.upvote a.downvote.downvote-on {
+    background-position: 0px -0px;
+}
+
+
+/*
+.sprite { background: url('sprite.png') no-repeat top left; width: 38px; height: 24px;  } 
+.sprite.down { background-position: 0 0; } 
+.sprite.plaindown { background-position: 0 -34px; } 
+.sprite.plainup { background-position: 0 -68px; } 
+.sprite.up { background-position: 0 -102px; } */

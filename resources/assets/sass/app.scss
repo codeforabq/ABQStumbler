@@ -1,2 +1,65 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+@import "resources/assets/css/summernote";
+
+//@import "CSS:resources/assets/css/summernote.css";
+
+@import "resources/assets/css/blogtemp";
+
+//@import "CSS:resources/assets/css/blogtemp.css";
+
+@import "resources/assets/css/fontawesome";
+
+//@import "CSS:resources/assets/css/fontawesome.css";
+
+.inline-headers h1, .inline-headers h3, .inline-headers h4 {
+  display: inline-block;
+  vertical-align: baseline;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.white {
+    color:white;
+}
+
+.red {
+    color:#c50000;
+}
+
+.user-display{
+    overflow:hidden; 
+    word-wrap:break-word;
+}
+
+.form-inline {
+    float: left; 
+    padding: 5px;
+}
+
+.form-clear {
+    clear: left !important; 
+}
+
+.button-clear {
+
+    background: transparent;
+    border: none !important;
+}
+
+.inline-headersnopad h1, .inline-headersnopad h3, .inline-headersnopad h4 {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.well-min {
+min-width: 100px !important;
+}
+
+.well-margin {
+margin: 5px !important;
+}
+
+.vbtn {
+    color:#959595;
+}
