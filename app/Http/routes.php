@@ -16,6 +16,11 @@ Route::get('/home', function()
                return redirect('/'); 
            });
 
+Route::get('/education', function()
+           {
+               return view('pages.education'); 
+           });
+
 Route::get('/', 'MainContentController@index');
 
 Route::get('incident', 'MainLoader@incident');

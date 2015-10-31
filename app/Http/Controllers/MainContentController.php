@@ -14,6 +14,13 @@ use App\Http\Controllers\Controller;
 
 class MainContentController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => 'create']);  
+        
+//        \Session::flash('flash_message_bad', 'Please login to report');
+    }
+    
     /**
      * Display a listing of the resource.
      *
