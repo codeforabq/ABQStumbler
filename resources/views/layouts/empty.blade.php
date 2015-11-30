@@ -7,7 +7,7 @@
         <div class="container darkp">
             <div class="row">    
                 <!-- Main Entries Column -->
-                <div class="col-md-9 col-sm-12 col-xs-12">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                     <h1 class="page-header">
                     @yield('heading')
                     <small>@yield('secondary')</small>
@@ -15,7 +15,7 @@
                     @include('partials.flash')
                     @yield('content')
                 </div>
-                @include('partials.widgets')
+                {{--@include('partials.widgets')--}}
             </div>
             <!-- /.row -->
         </div>
