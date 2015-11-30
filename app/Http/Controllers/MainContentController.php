@@ -37,6 +37,31 @@ class MainContentController extends Controller
 
     return view('pages.index', compact('userquests'));
     }
+    
+    public function shownew()
+    {
+        
+    $userquests = DB::table('maincs')
+            ->leftJoin('users', 'users.id', '=', 'maincs.user_id')
+            ->select('users.name', 'users.id as uid', 'maincs.id', 'maincs.title', 'maincs.summary', 'maincs.body', 'maincs.created_at', 'maincs.slug')
+            ->orderBy('created_at', 'desc')
+            ->groupBy('maincs.id')
+            ->paginate(7);   
+
+    return view('pages.index', compact('userquests'));
+    }
+    
+    public function btags()
+    {
+        
+    $userquests = DB::table('maincs')
+            ->leftJoin('users', 'users.id', '=', 'maincs.user_id')
+            ->select('users.name', 'users.id as uid', 'maincs.id', 'maincs.title', 'maincs.summary', 'maincs.body', 'maincs.created_at', 'maincs.slug')
+            ->groupBy('maincs.id')
+            ->paginate(7);   
+
+    return view('pages.index', compact('userquests'));
+    }
 
     /**
      * Show the form for creating a new resource.

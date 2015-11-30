@@ -16,14 +16,24 @@ Route::get('/home', function()
                return redirect('/'); 
            });
 
+//Show static education page
 Route::get('/education', function()
            {
                return view('pages.education'); 
            });
 
+//show main index page
 Route::get('/', 'MainContentController@index');
 
+//show pedestrian incedent map 
 Route::get('incident', 'MainLoader@incident');
+
+//user profile
+Route::get('profile', 'MainLoader@profile');
+
+// Browse by specific created at time or show tags 
+Route::get('browse/new', 'MainContentController@shownew');
+Route::get('browse/tags', 'MainContentController@btags');
 
 //Main Content Resource
 Route::resource('maincs', 'MainContentController');

@@ -9,6 +9,10 @@ use App\Http\Controllers\Controller;
 
 class MainLoader extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => ['profile','uupdate','loaduupdate']]);    
+    }
     /**
      * Display a listing of the resource.
      *
@@ -22,6 +26,11 @@ class MainLoader extends Controller
     public function incident()
     {
      return view('pages.incident');
+    }
+    
+    public function profile()
+    {
+     return view('pages.profile');
     }
     /**
      * Show the form for creating a new resource.
