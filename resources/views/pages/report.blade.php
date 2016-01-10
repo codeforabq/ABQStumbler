@@ -16,10 +16,10 @@
         {!! Form::label('image', 'Image:') !!}
         {!! Form::file('image', null, ['class' => 'form-control']) !!}  
     </div>
-   <p id="demo"></p>
     <div class="form-group">
         {!! Form::label('location', 'Location:') !!}
-        {!! Form::text('location', null, ['class' => 'form-control', 'value' => '30']) !!}  
+        {!! Form::text('location', null, ['class' => 'form-control', 'value' => '30']) !!}
+        <p id="demo"></p>
     </div>  
     <div class="form-group">
         {!! Form::label('tags', 'Tags:') !!}<small>(separate with #symbol)</small>
