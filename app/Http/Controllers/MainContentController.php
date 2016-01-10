@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use DB;
 use Auth;
 use App\Mainc;
+use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 
@@ -79,7 +80,7 @@ class MainContentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request\Createmainc $request)
+    public function store(Requests\Createmainc $request)
     {
 
         $input = Request::all();
