@@ -16,7 +16,7 @@ This app can be used by both pedestrians and drivers to figure out how to keep A
 * Bootstrap (HTML, CSS)
 * Laravel (PHP Framework)
 * MySQL (Database)
-* 
+
 ##Pages
 * Home page (has multiple images of broken sidewalks which users can interact with)
 * Report (allows users to post unsafe locations using images and locations)
