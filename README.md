@@ -13,6 +13,6 @@ Another important aspect where we will need help is with the education page. If 
 This app can be used by both pedestrians and drivers to figure out how to keep ABQ safe! Tell commuters you know about this app to make ABQ more pedestrian friendly!
 
 ##Technology stack
-Bootstrap (HTML, CSS)
-Laravel (PHP Framework)
-MySQL (Database)
+* Bootstrap (HTML, CSS)
+* Laravel (PHP Framework)
+* MySQL (Database)
